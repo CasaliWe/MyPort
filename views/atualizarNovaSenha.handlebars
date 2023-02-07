@@ -1,0 +1,26 @@
+<div class="container-fluid vh-100 bg-dark">
+      <div class="row h-100 algin-items-center">
+            <div class="col-lg-6 offset-lg-3 d-flex flex-column align-items-center justify-content-center">
+                  
+                 
+                  <i class="fas fa-lock" id="icon-user"></i>
+
+                  <form action="/senhaAtualizada" method="POST" id="form-login" class="d-flex flex-column justify-content-center align-items-center">
+
+                       <input type="hidden" value="{{email}}" name="email">
+                      
+                       <input class="w-75 mb-3 mt-5" id="attSenha" oninput="checkSenha2()" type="password" placeholder="Digite sua nova senha" name="password" required>
+                       <input class="w-75 mb-3" type="password" placeholder="Confirme sua nova senha" name="confirm" required>
+
+                       <button title="Recuperar" id="btn-registrar2" type="submit" class="w-75 mb-3">Atualizar senha</button>
+                  </form>
+
+                  <p id="aviso-senha-fraca2" class="mt-2"></p>
+
+                  {{#if messages.novaSenha}}
+                       <p class="text-danger mt-1">{{messages.novaSenha}}</p>    
+                  {{/if}}
+                
+            </div>
+      </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="container-fluid p-0 bg-dark vh-100">
+        <div class="row">
+               <div class="col-lg-3 p-0" id="painel">
+
+                    <div data-bs-toggle="modal" data-bs-target="#modalAddFoto" class="d-flex flex-column justify-content-center align-items-center mb-3" id="container-icon-foto">
+                        <div id="container-foto">
+                                 {{#if checkUser.imgName}}
+                                     <img src="/imgUsers/{{checkUser.imgName}}" alt="Imagem Usuário">
+                                 {{else}}
+                                     <i class="fas fa-user-circle" id="icon-user-dash"></i>
+                                 {{/if}}
+                        </div>
+                        <div id="container-icon"><i class="fas fa-camera"></i></div>
+                    </div>
+
+                    <p>{{checkUser.nome}}</p>
+
+                    <button onclick="" style="background-color: rgba(0, 0, 255, 0.699);"><img style="width:20px; margin-right:5px;" src="/images/id.png" alt="MINHA CONTA"> Minha conta</button>
+                    <button onclick=""><img style="width:20px; margin-right:5px;" src="/images/config.png" alt="MINHA CONTA"> Meus projetos</button>
+                    <button onclick=""><img style="width:20px; margin-right:5px;" src="/images/edit.png" alt="MINHA CONTA"> Configuração de exibição</button>
+                    <button onclick="window.location.href='/logout'" class="mt-5 text-danger">Sair</button>
+               </div>
+
+               <div class="col-lg-9">oi</div>
+
+        </div>
+</div>
+
+
+<!--MODAL PARA ADD FOTO-->
+<div class="modal fade" id="modalAddFoto" tabindex="-1" aria-labelledby="modalAddFoto" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modalAddFoto">Adicione sua foto de perfil</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <form action="/uploadImg" method="POST" enctype="multipart/form-data" class="d-flex flex-column align-items-center">
+
+                <input type="hidden" value="{{checkUser.id}}" name="id">
+
+                <input type="hidden" value="{{checkUser.imgName}}" name="imgName">
+               
+                <input type="file" name="imgName" class="mb-3" onchange="fotoAdd()"> 
+
+                <button disabled type="submit" class="btn btn-sm w-50 mx-auto btn-primary" id="btn-salvar-img">Salvar</button>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--MODAL PARA ADD FOTO-->

@@ -1,0 +1,27 @@
+<div class="container-fluid vh-100 bg-dark">
+      <div class="row h-100 algin-items-center">
+            <div class="col-lg-6 offset-lg-3 d-flex flex-column align-items-center justify-content-center">
+                  
+                 
+                  <i class="fas fa-lock" id="icon-user"></i>
+
+                  <form action="/registrarNovaSenha" method="POST" id="form-login" class="d-flex flex-column justify-content-center align-items-center">
+                      
+                       <input class="w-75 mb-3 mt-5" type="email" placeholder="Digite o E-mail cadastrado" name="email" required>
+
+                       <button title="Recuperar" type="submit" class="w-75 mb-3">Recuperar senha</button>
+
+                       <p onclick="window.location.href='/'" title="Voltar para login" id="criar-conta">Voltar para login</p>
+                  </form>
+
+                  {{#if messages.checkNovaSenhaFail}}
+                       <p class="text-danger mt-1">{{messages.checkNovaSenhaFail}}</p>    
+                  {{/if}}
+
+                  {{#if messages.checkNovaSenhaOk}}
+                       <p class="text-success mt-1">{{messages.checkNovaSenhaOk}}</p>    
+                  {{/if}}
+                
+            </div>
+      </div>
+</div>

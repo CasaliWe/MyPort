@@ -1,0 +1,29 @@
+<div class="container-fluid vh-100 bg-dark">
+      <div class="row h-100 algin-items-center">
+            <div class="col-lg-6 offset-lg-3 d-flex flex-column align-items-center justify-content-center">
+                  
+                  <i class="fas fa-user-circle" id="icon-user"></i>
+
+                  <form action="/login" method="POST" id="form-login" class="d-flex flex-column justify-content-center align-items-center">
+                      
+                       <input class="w-75 mb-3 mt-5" type="text" placeholder="User" name="userName" required>
+                       <input class="w-75 mb-3" type="password" placeholder="Senha" name="senha" required>
+
+                       <button title="Logar" type="submit" class="w-75 mb-3">LOGIN</button>
+
+                       <p onclick="window.location.href='/registrar'" title="Crie sua conta" id="criar-conta">Cria conta</p>
+                  </form>
+
+                  <p class="esqueceu-senha">Esqueceu sua senha? <a href="/recuperarSenha">Clique aqui!</a></p>
+
+                  {{#if messages.checkLogin}}
+                       <p class="text-danger mt-1">{{messages.checkLogin}}</p>    
+                  {{/if}}
+
+                  {{#if messages.senhaAtt}}
+                       <p class="text-success mt-1">{{messages.senhaAtt}}</p>    
+                  {{/if}}
+                
+            </div>
+      </div>
+</div>

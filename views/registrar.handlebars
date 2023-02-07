@@ -1,0 +1,28 @@
+<div class="container-fluid vh-100 bg-dark">
+      <div class="row h-100 algin-items-center">
+            <div class="col-lg-6 offset-lg-3 d-flex flex-column align-items-center justify-content-center">
+                  
+                  <i class="fas fa-id-card-alt" id="icon-user-registrar"></i>
+
+                  <form action="/registrar" method="POST" id="form-registrar" class="d-flex flex-column justify-content-center align-items-center">
+                       
+                       <input class="w-75 mb-3 mt-5" type="text" placeholder="Nome" name="nome" required>
+                       <input class="w-75 mb-3" type="text" placeholder="User" name="userName" required>
+                       <input class="w-75 mb-3" type="email" placeholder="Email" name="email" required>
+                       <input class="w-75 mb-3" id="senhaTeste" oninput="checkSenha()" type="password" placeholder="Senha" name="senha" required>
+                       <input class="w-75 mb-3" type="password" placeholder="Confirmar" name="confirm" required>
+
+                       <button id="btn-registrar" title="Criar Conta" type="submit" class="w-75 mb-3">CRIAR CONTA</button>
+
+                       <p onclick="window.location.href='/'" title="Faça login" id="criar-conta">Fazer login</p>
+                  </form>
+
+                  <p id="aviso-senha-fraca" class="mt-2"></p>
+
+                  {{#if messages.checkRegister}}
+                       <p class="text-danger mt-1">{{messages.checkRegister}}</p>    
+                  {{/if}}
+                
+            </div>
+      </div>
+</div>

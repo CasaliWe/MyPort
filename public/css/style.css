@@ -1,0 +1,210 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Recursive:wght@300;400;500;600;700;800;900;1000&display=swap');
+/*    font-family: 'Nunito Sans', sans-serif;   font-family: 'Recursive', sans-serif;   */
+
+
+body, html {
+    overflow: hidden;
+    font-family: 'Nunito Sans', sans-serif; 
+}
+
+
+:root{
+      --corPrinciapl: gray;
+      --corSecondaria: rgba(128, 128, 128, 0.253);
+      --corTexto: rgba(128, 128, 128, 0.911);
+}
+
+
+/*LOGIN*/
+#icon-user{
+    font-size: 90px;
+    margin-bottom: -40px;
+    color: var(--corPrinciapl);
+}
+
+
+#form-login{
+       width: 350px;
+       height: 250px;
+       border: 1px solid var(--corPrinciapl);
+       border-radius: 10px;
+}
+
+#form-login input{
+     padding: 5px;
+     background-color: var(--corSecondaria);
+     border: none;
+     border-radius: 5px;
+}
+
+#form-login button{
+    padding: 5px;
+    background-color: var(--corPrinciapl);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    transition: 400ms;
+}
+
+#form-login button:hover{
+    background-color: var(--corTexto);
+}
+
+#criar-conta{
+      color: var(--corTexto);
+      cursor: pointer;
+      transition: 400ms;
+}
+
+#criar-conta:hover{
+    color: var(--corSecondaria);
+}
+
+.esqueceu-senha{
+      font-size: 12px;
+      color: white;
+      margin-top: 10px;
+}
+
+.esqueceu-senha a{
+    color: var(--corPrinciapl);
+    text-decoration: none;
+}
+/*LOGIN*/
+
+
+
+
+
+
+
+/*REGISTRAR*/
+#icon-user-registrar{
+    font-size: 80px;
+    margin-bottom: -23px;
+    color: var(--corPrinciapl);
+}
+
+
+#form-registrar{
+       width: 350px;
+       height: auto;
+       padding: 10px 0px;
+       border: 1px solid var(--corPrinciapl);
+       border-radius: 10px;
+}
+
+#form-registrar input{
+     padding: 5px;
+     background-color: var(--corSecondaria);
+     border: none;
+     border-radius: 5px;
+}
+
+#form-registrar button{
+    padding: 5px;
+    background-color: var(--corPrinciapl);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    transition: 400ms;
+}
+
+#form-registrar button:hover{
+    background-color: var(--corTexto);
+}
+
+#criar-conta{
+      color: var(--corTexto);
+      cursor: pointer;
+      transition: 400ms;
+}
+
+#criar-conta:hover{
+    color: var(--corSecondaria);
+}
+/*REGISTRAR*/
+
+
+
+
+
+/*DASHBOARD*/
+#painel{
+      background-color: var(--corSecondaria);
+      height: 100vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 30px;
+}
+
+#icon-user-dash{
+    font-size: 90px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    color: var(--corPrinciapl);
+}
+
+#painel button{
+    font-size: 18px;
+    color: white;
+    width: 100%;
+    margin: 7px 0px;
+    border: none;
+    text-align: start;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    background-color: transparent;
+}
+
+
+#container-icon-foto:hover{
+      cursor: pointer;
+      opacity: .5;
+      transition: 500ms;
+}
+
+#container-foto{
+    max-height: 100px;
+    margin-top: 35px;
+    max-width: 100px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    border-radius: 100px;
+    align-items: center;
+}
+
+#container-foto img{
+    width: 100%;
+}
+
+
+#container-icon{
+      width: 20px;
+      height: 20px;
+      padding: 10px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background-color: var(--corPrinciapl);
+      margin-top: -12px;
+}
+
+#container-icon i{
+   font-size: 12px;
+   color: black;
+}
+/*DASHBOARD*/
