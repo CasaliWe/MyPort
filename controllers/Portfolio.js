@@ -259,5 +259,19 @@ module.exports = class PostsControllers {
                res.redirect('/')
         }
         //ADICIONAR FOTO
+
+
+
+
+        //-------------------MY PORT--------------------
+        static MyPort(req,res){
+             var user = req.params.id
+
+             //Lógica para pegar todos os dados desse user no banco
+             //Mandar os dados para a view
+
+             res.render('myPort')
+        }
+        //-------------------MY PORT--------------------
           
 }

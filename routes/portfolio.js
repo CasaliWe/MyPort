@@ -31,5 +31,6 @@ router.get('/concluirRecuperacaoDeSenha/:id', PortfolioControllers.atualizarSenh
 router.post('/senhaAtualizada', PortfolioControllers.senhaAtualizada)
 router.get('/dashboard', PortfolioControllers.dashboard)
 router.post('/uploadImg',upload.single('imgName'), PortfolioControllers.addFoto)
+router.get('/:id', PortfolioControllers.MyPort)
 
 module.exports = router
