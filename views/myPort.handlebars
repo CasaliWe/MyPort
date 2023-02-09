@@ -1,48 +1,107 @@
-<div class="container-fluid">
-       <div class="row">
-            <div class="col-lg-4 vh-100 d-flex justify-content-center align-items-center p-lg-5">
+<main class="w-100 vh-100 overflow-auto">
+          
+            
 
-                    <div class="p-3 w-100 h-100 shadow-lg d-flex flex-column align-items-center">
-
-                            <div id="container-foto">
-                                 {{#if checkUser.imgName}}
-                                     <img src="" alt="">
-                                 {{else}}
-                                     <i class="fas fa-user-circle" id="icon-user-dash"></i>
-                                 {{/if}}
-                            </div>
-
-                            <h4>Nome</h4>
-
-                            <h6>Profissão</h6>
-
-                            <div>
-                                 <a href="">instagram</a>
-                                 <a href="">LinkedIn</a>
-                                 <a href="">Whatsapp</a>
-                            </div>
-
-                            <p>Localização</p>
-
-                            <button>Email</button>
-
-                            <p>DESCRIÇÃO DO USER PARA DESCREVER COMO É SEUS PROJKETOS</p>
-
-                            <div>
-                               <div><span>Porjetos ativos</span> <span>10</span></div>
-                               <div><span>Número total de visualizações</span> <span>10</span></div>
-                            </div>
-                    </div>
-
+            <!--BANNER-->
+            <div id="container-banner">
+                  <img src="/images/banner.jpg">
             </div>
+            <!--BANNER-->
 
 
-            <div class="col-lg-8 p-4">
 
-                  <div class="p-3">
-                         o
+
+            <!--CONTENT-->
+            <div class="container" id="content">
+                  <div class="row">
+
+                        <!--CARD APRESENTAÇÃO-->
+                        <div class="col-lg-4 px-2">,
+
+                              <div id="card-principal">
+
+                                        <div id="container-foto">
+                                             {{#if userData.imgName}}
+                                               <img src="/imgUsers/{{userData.imgName}}" alt="Imagem Usuário">
+                                             {{else}}
+                                               <i class="fas fa-user-circle" id="icon-user-dash"></i>
+                                             {{/if}}
+                                        </div> 
+
+                                        <h5 class="mt-3 w-75 text-center fw-bold">{{userData.nome}}</h5>
+
+                                        <p class="mb-1 w-75 text-center _job">
+                                             {{#if userInfo.trabalho}}
+                                                 {{userInfo.trabalho}}
+                                             {{/if}}
+                                        </p>
+
+                                        <p class="mt-2 w-75 text-center"><i class="fas fa-map-marker-alt"></i>
+                                              {{#if userInfo.cidade}}
+                                                  {{userInfo.cidade}}
+                                              {{/if}}
+                                        </p>
+                                        
+                                        <div id="icon-redes">
+
+                                             {{#if userInfo.instagram}}
+                                                 <a href="{{userInfo.instagram}}"><i class="fab fa-instagram"></i></a>
+                                             {{/if}}
+
+
+                                             {{#if userInfo.linkedin}}
+                                                  <a href="{{userInfo.linkedin}}"><i class="fab fa-linkedin"></i></a>
+                                             {{/if}}
+
+                                        </div>
+
+                                        <p class="mt-1">
+                                             {{#if userInfo.whatsapp}}
+                                                  {{userInfo.whatsapp}}
+                                             {{/if}}
+                                        </p>
+
+                                        <p class="mt-2 w-75 text-center">
+                                             {{#if userInfo.bio}}
+                                                 {{userInfo.bio}}
+                                             {{/if}}
+                                        </p>
+                                        
+                                         {{#if userInfo.email}}
+                                                <a class="btn btn-dark w-50" href="mailto:{{userInfo.email}}"><i class="fas fa-envelope"></i> E-mail</a>
+                                         {{/if}}
+
+
+                                        {{#if userInfo.link}}
+                                                <a href="{{userInfo.link}}" class="my-3">{{userInfo.link}}</a>
+                                        {{/if}}
+
+
+                                        <div class="mt-3 w-75">
+                                             <div class="mb-2 w-100 d-flex justify-content-between"><span>Projetos on-line</span> <span>10</span></div>
+                                             <div class="w-100 d-flex justify-content-between"><span>Vizualizações</span> <span>50</span></div>
+                                        </div>
+
+                              </div>
+
+                        </div>
+                         <!--CARD APRESENTAÇÃO-->
+
+
+
+                        <!--PROJETOS-->
+                        <div class="col-lg-8 px-2">
+
+                               <div id="projetos">
+
+                                      
+                               </div>
+                              
+                        </div>
+                         <!--PROJETOS-->
+                           
                   </div>
-
             </div>
-       </div>
-</div>
+            <!--CONTENT-->
+
+</main>

@@ -21,10 +21,78 @@
                     <button onclick="window.location.href='/logout'" class="mt-5 text-danger">Sair</button>
                </div>
 
-               <div class="col-lg-9">oi</div>
+
+
+               <div class="col-lg-9 p-3 text-white px-5 vh-100 overflow-auto"> 
+
+                      {{#if messages.InfoAtt}}
+                          <p class="text-success my-2 text-center">{{messages.InfoAtt}}</p>    
+                      {{/if}}
+                  
+                    
+                       <h5 class="text-center mt-3 mb-2">Por aqui você atualiza todas as suas informações!</h5>
+
+                       <form action="/attInfoUser" method="POST">
+                               
+                               <input type="hidden" value="{{checkUser.id}}" name="UserId">
+                               
+                               <div class="mb-2">
+                                  <label for="" class="form-label">O que você faz?</label>
+                                  <input class="form-control"  type="text" name="trabalho" placeholder="Ex: Designer">
+                               </div>
+
+                               <div class="mb-2">
+                                  <label for="" class="form-label">Qual a seua cidade?</label>
+                                  <input class="form-control"  type="text" name="cidade" placeholder="Ex: São Paulo - SP">
+                               </div>
+
+                                <div class="mb-2">
+                                  <label for="" class="form-label">Redes socias:</label>
+                                  
+                                  <div class="input-group flex-nowrap mb-1">
+                                      <span class="input-group-text"><i class="fab fa-instagram"></i></span>
+                                      <input type="text" name="instagram" class="form-control" placeholder="Insira a url">
+                                  </div>
+
+                                  <div class="input-group flex-nowrap mb-1">
+                                      <span class="input-group-text"><i class="fab fa-linkedin"></i></span>
+                                      <input type="text" name="linkedin" class="form-control" placeholder="Insira a url">
+                                  </div>
+
+                                  <div class="input-group flex-nowrap">
+                                      <span class="input-group-text"><i class="fab fa-whatsapp"></i></span>
+                                      <input type="text" name="whatsapp" class="form-control" placeholder="Seu número">
+                                  </div>
+                                </div>
+
+                                <div class="mb-2">
+                                  <label for="" class="form-label">Link opicional:</label>
+                                  <input class="form-control"  type="text" name="link" placeholder="Ex: meuportfolio.com">
+                                </div>
+
+                                <div class="mb-2">
+                                  <label for="bio" class="form-label">Sua biografia:</label>
+                                  <textarea id="bio" class="form-control" name="bio" rows="4" placeholder="Fale sobre você"></textarea>
+                                </div>
+
+                                <div class="mb-2">
+                                  <label for="" class="form-label">Seu E-mail:</label>
+                                  <input class="form-control"  type="text" name="email" placeholder="Ex: user@gmai.com">
+                                </div>
+
+
+                                <button class="btn btn-primary">Atualizar</button>
+                          
+                       </form>
+                       
+               </div>
 
         </div>
 </div>
+
+
+
+
 
 
 <!--MODAL PARA ADD FOTO-->

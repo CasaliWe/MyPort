@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const Portfolio = require('../models/dbPortfolio')
+const Info = require('../models/infoUsers')
 
 const fs = require('fs')
 
@@ -79,6 +80,23 @@ module.exports = class PostsControllers {
               
               //Criando o User
               const createdUser = await Portfolio.create({nome, userName, email, senha}) 
+               
+              //Criando a tabela info
+              const infoUser = {
+                 UserId: createdUser.id,
+                 trabalho: null,
+                 cidade: null,
+                 instagram: null,
+                 linkedin: null,
+                 whatsapp: null,
+                 bio: null,
+                 email: null,
+                 link: null
+              }
+
+              await Info.create(infoUser)
+
+              
               
               //Criando a sessão para manter o user logado
               req.session.userid = createdUser.id
@@ -141,8 +159,8 @@ module.exports = class PostsControllers {
                 const user = req.session.userid
 
                 if(user){
-                     const checkUser = await Portfolio.findOne({raw:true, where:{id: user}})
-                     res.render('dashboard', {checkUser})
+                     const checkUser = await Portfolio.findOne({include: Info, where:{id: user}})
+                     res.render('dashboard', {checkUser: checkUser.get({plain: true})})
                 } else{
                      res.redirect('/')
                 }
@@ -264,14 +282,38 @@ module.exports = class PostsControllers {
 
 
         //-------------------MY PORT--------------------
-        static MyPort(req,res){
+        static async MyPort(req,res){
              var user = req.params.id
 
-             //Lógica para pegar todos os dados desse user no banco
-             //Mandar os dados para a view
+             try{
 
-             res.render('myPort')
+                    const checkUserFull = await Portfolio.findOne({include: Info, where: {userName: user}})
+
+                    const userData = checkUserFull.get({plain: true})
+
+                    const userInfo = userData.infos[0]
+          
+                    res.render('myPort', {userData, userInfo})
+            
+          } catch(err){
+                  console.log(err)
+             }
         }
         //-------------------MY PORT--------------------
+
+
+
+
+        //-----------ATUALIZAR INFO USER---------------
+        static async attInfoUser(req,res){
+               const {UserId, trabalho, cidade, instagram, linkedin, whatsapp, bio, email, link} = req.body
+
+               await Info.update({trabalho, cidade, instagram, linkedin, whatsapp, bio, email, link}, {where:{UserId: UserId}})
+
+               req.flash('InfoAtt', 'Suas informações foram atualizadas!')
+               res.redirect('/')
+               return
+        }
+        //-----------ATUALIZAR INFO USER---------------
           
 }

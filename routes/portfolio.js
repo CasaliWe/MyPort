@@ -33,4 +33,6 @@ router.get('/dashboard', PortfolioControllers.dashboard)
 router.post('/uploadImg',upload.single('imgName'), PortfolioControllers.addFoto)
 router.get('/:id', PortfolioControllers.MyPort)
 
+router.post('/attInfoUser', PortfolioControllers.attInfoUser)
+
 module.exports = router

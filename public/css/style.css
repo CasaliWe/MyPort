@@ -187,7 +187,7 @@ body, html {
 }
 
 #container-foto img{
-    width: 100%;
+    width: 110%;
 }
 
 
@@ -209,3 +209,78 @@ body, html {
    color: black;
 }
 /*DASHBOARD*/
+
+
+
+
+
+
+/*-----------------------------------MY PORT--------------------------------*/
+
+/*BANNER*/
+#container-banner{
+       height: 30vh;
+       width: 100%;
+       overflow: hidden;
+}
+
+#container-banner img{
+     width: 120%;
+}
+/*BANNER*/
+
+
+
+
+
+/*CONTENT*/
+#content{
+       margin-top: -120px;
+}
+
+
+
+
+#card-principal{
+       border-radius: 15px;
+       height: auto;
+       margin-bottom: 30px;
+       width: 100%;
+       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.281);
+       background-color: #f2f2f2;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+       padding: 30px 20px;
+}
+
+._job{
+     font-size: 13px; 
+}
+
+#icon-redes i{
+    font-size: 25px;
+    text-decoration: none;
+} 
+
+#btn{
+       background-color: transparent;
+       color: black;
+       border: 1px solid black;
+       width: 60%;
+       margin: 4px auto;
+       border-radius: 5px;
+}
+
+
+
+
+
+#projetos{
+
+}
+/*CONTENT*/
+
+
+/*-----------------------------------MY PORT--------------------------------*/

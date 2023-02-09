@@ -2,7 +2,11 @@ const express = require('express')
 const exphbs = require('express-handlebars')
 
 const portfolioRoutes = require('./routes/portfolio')
+
+const conn = require('./db/conn')
+
 const Portfolio = require('./models/dbPortfolio') 
+const Info = require('./models/infoUsers')
 
 const { Cookie } = require('express-session')
 const session = require('express-session')
@@ -62,7 +66,7 @@ app.use((req, res, next)=>{
 app.use('/', portfolioRoutes) 
 
 
-Portfolio.sync().then(()=>{
+conn.sync().then(()=>{
     app.listen(process.env.PORT || 3000)
 }).catch((err) => console.log(err))
 //{force:true}
